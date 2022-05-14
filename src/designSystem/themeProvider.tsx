@@ -7,13 +7,30 @@ import styled, {
 const customTheme = createTheme({
   palette: {
     primary: {
-      main: "#ffffff",
-      light: "#ffffff",
-      dark: "#ffffff",
-      contrastText: "#ffffff",
+      main: "#F2EC54",
+      contrastText: "#000000",
     },
     secondary: {
-      main: "#ffffff",
+      main: "#5D5FEF",
+      light: "#ffffff",
+    },
+  },
+  typography: {
+    fontFamily: [
+      "Work Sans",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+    allVariants: {
+      color: "#ffffff",
     },
   },
 });
