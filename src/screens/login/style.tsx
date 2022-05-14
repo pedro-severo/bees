@@ -25,17 +25,16 @@ export const StyledText = styled(MuiTypography)`
   }
 `;
 
-export const FullNameInput = styled(designSystem.TextField)`
-  .MuiInputLabel-outlined {
-    color: ${({ theme }) => theme?.palette?.primary.contrastText};
-  }
-  .MuiOutlinedInput-root {
-    background: #ffffff;
-  }
-  .MuiInputLabel-outlined.MuiInputLabel-shrink {
-    color: #000000;
-  }
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
 `;
+
+export const FullNameInput = styled(designSystem.TextField)``;
+
+export const StyledCheckbox = styled(designSystem.Checkbox)``;
+
+export const StyledButton = styled(designSystem.Button)``;
 
 export const BeesImage = styled.img`
   position: absolute;

@@ -8,12 +8,10 @@ const customTheme = createTheme({
   palette: {
     primary: {
       main: "#F2EC54",
-      light: "#ffffff",
-      dark: "#ffffff",
       contrastText: "#000000",
     },
     secondary: {
-      main: "#3F3F46",
+      main: "#5D5FEF",
       light: "#ffffff",
     },
   },
