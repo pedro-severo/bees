@@ -7,8 +7,8 @@ export const LoginView: React.FC<any> = () => {
   return (
     <LoginScreen>
       <MainContent>
-        <StyledText>{interfaceTexts.loginScreen.firstSubtitle}</StyledText>
-        <StyledText>{interfaceTexts.loginScreen.secondSubtitle}</StyledText>
+        <StyledText>{interfaceTexts.screens.login.firstSubtitle}</StyledText>
+        <StyledText>{interfaceTexts.screens.login.secondSubtitle}</StyledText>
       </MainContent>
       <BeesImage src={beesLogo} alt="Logo of Bees Company"></BeesImage>
     </LoginScreen>
