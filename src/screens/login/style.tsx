@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Typography as MuiTypography } from "@material-ui/core";
+import { designSystem } from "../../designSystem";
 
 export const LoginScreen = styled.div`
   margin: -8px;
@@ -21,6 +22,18 @@ export const StyledText = styled(MuiTypography)`
   }
   &.MuiTypography-root {
     margin: 0 0 16px 0;
+  }
+`;
+
+export const FullNameInput = styled(designSystem.TextField)`
+  .MuiInputLabel-outlined {
+    color: ${({ theme }) => theme?.palette?.primary.contrastText};
+  }
+  .MuiOutlinedInput-root {
+    background: #ffffff;
+  }
+  .MuiInputLabel-outlined.MuiInputLabel-shrink {
+    color: #000000;
   }
 `;
 

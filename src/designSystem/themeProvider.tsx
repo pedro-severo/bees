@@ -14,6 +14,7 @@ const customTheme = createTheme({
     },
     secondary: {
       main: "#3F3F46",
+      light: "#ffffff",
     },
   },
   typography: {
