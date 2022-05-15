@@ -10,7 +10,8 @@ export const HeaderWrapper = styled.header`
   align-items: center;
 `;
 
-export const BackButton = styled.div`
+export const BackButton = styled.button`
+  all: unset;
   cursor: pointer;
   display: flex;
   align-items: center;
