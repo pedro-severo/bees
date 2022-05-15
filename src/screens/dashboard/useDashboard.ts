@@ -1,13 +1,14 @@
-import { Brewery } from "./../../global/entities/brewery/interfaces";
 import { getBreweries } from "./../../services/brewery/getBreweries";
 import { useEffect } from "react";
 import { useGlobal } from "reactn";
+import { IUseDashboard } from "./interfaces";
 
-export const useDashboard = (): Brewery[] => {
+export const useDashboard = (): IUseDashboard => {
   const [breweries] = useGlobal("breweries");
+  const [isLoading] = useGlobal("isLoading");
   useEffect(() => {
     getBreweries();
   }, []);
 
-  return breweries;
+  return { breweries, isLoading };
 };
