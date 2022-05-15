@@ -2,7 +2,6 @@ import React from "react";
 import { IBreweryCardView } from "./interfaces";
 import { CardWrraper } from "./style";
 import { designSystem } from "../../designSystem";
-import styled from "styled-components";
 
 const {
   Stack,
@@ -16,13 +15,24 @@ const {
   AddCircleIcon,
   DeleteIcon,
   CardHeader,
+  IconButton,
 } = designSystem;
 
-export const BreweryCardView: React.FC<IBreweryCardView> = ({ brewery }) => {
+export const BreweryCardView: React.FC<IBreweryCardView> = ({
+  brewery,
+  handleDeleteButtonClick,
+}) => {
   return (
     <CardWrraper>
       <Card>
-        <CardHeader action={<DeleteIcon />} title={brewery.name} />
+        <CardHeader
+          action={
+            <IconButton onClick={() => handleDeleteButtonClick(brewery.id)}>
+              <DeleteIcon />
+            </IconButton>
+          }
+          title={brewery.name}
+        />
         <CardContent>
           <Typography variant="body1">
             {brewery.city}

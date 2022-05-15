@@ -13,6 +13,7 @@ import AssessmentOutlinedIcon from "./icons/AssessmentIcon";
 import FmdGoodOutlinedIcon from "./icons/FmdGoodIcon";
 import LocalPhoneOutlinedIcon from "./icons/LocalPhoneIcon";
 import DeleteOutlineIcon from "./icons/DeleteIcon";
+import IconButton from "./components/IconButton";
 
 export const designSystem = {
   TextField: TextField || EmptyComponent,
@@ -29,4 +30,5 @@ export const designSystem = {
   FmdGoodIcon: FmdGoodOutlinedIcon || EmptyComponent,
   LocalPhoneIcon: LocalPhoneOutlinedIcon || EmptyComponent,
   DeleteIcon: DeleteOutlineIcon || EmptyComponent,
+  IconButton: IconButton || EmptyComponent,
 };
