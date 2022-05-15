@@ -8,5 +8,10 @@ export const interfaceTexts = {
       beesImageAltText: "Logo of Bees Company",
       submitButtonText: "ENTER",
     },
+    dashboard: {
+      header: {
+        goBack: "Go back",
+      },
+    },
   },
 };
