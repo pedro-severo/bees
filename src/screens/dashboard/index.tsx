@@ -5,7 +5,7 @@ import { useDashboard } from "./useDashboard";
 
 export const Dashboard: React.FC<any> = () => {
   useProptectedRoutes(true);
-  const breweries = useDashboard();
+  const { breweries, isLoading } = useDashboard();
 
-  return <DashboardView breweries={breweries} />;
+  return <DashboardView breweries={breweries} isLoading={isLoading} />;
 };
