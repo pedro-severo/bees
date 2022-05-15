@@ -4,10 +4,13 @@ import BackIcon from "../../designSystem/icons/BackIcon";
 import { IHeaderView } from "./interfaces";
 import { BackButton, HeaderWrapper } from "./style";
 
-export const HeaderView: React.FC<IHeaderView> = ({ userName }) => {
+export const HeaderView: React.FC<IHeaderView> = ({
+  userName,
+  handleGoBackClick,
+}) => {
   return (
     <HeaderWrapper>
-      <BackButton>
+      <BackButton onClick={handleGoBackClick}>
         <BackIcon />
         <h2>{interfaceTexts.screens.dashboard.header.goBack}</h2>
       </BackButton>
