@@ -10,6 +10,7 @@ export const getBreweries = async () => {
     setGlobal({ isLoading: false });
     if (breweries.length) setGlobal({ breweries });
   } catch (e) {
+    setGlobal({ isLoading: false });
     // TODO: create a component to show erros to user
     console.log(e);
   }
