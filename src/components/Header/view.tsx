@@ -1,6 +1,6 @@
 import React from "react";
 import { interfaceTexts } from "../../constants/interfaceTexts";
-import BackIcon from "../../designSystem/icons/backIcon";
+import BackIcon from "../../designSystem/icons/BackIcon";
 import { IHeaderView } from "./interfaces";
 import { BackButton, HeaderWrapper } from "./style";
 
