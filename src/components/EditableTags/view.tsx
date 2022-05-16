@@ -22,7 +22,9 @@ export const EditableTagsView: React.FC<IEditableTagsView> = ({
             <AddCircleIcon />
           </IconButton>
         }
-        label={<input value={inputValue} onChange={handleInputChange} />}
+        label={
+          <input value={inputValue} onChange={handleInputChange} type="text" />
+        }
         color="primary"
       />
     </form>
