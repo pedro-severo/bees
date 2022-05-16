@@ -1,43 +1,87 @@
-# Getting Started with Create React App
+# Bees project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## A brief description of the project choices 
 
-In the project directory, you can run:
+### Main technologies used
 
-### `npm start`
+- [React](https://github.com/facebook/create-react-app)
+- [Typescript](https://www.typescriptlang.org/)
+- [MaterialUI](https://mui.com/) - Lib with some styled components according google design 
+- [Styled-components](https://styled-components.com/) - Lib to style components with css in javascript (or typescript) files
+- [ReactN](https://github.com/CharlesStover/reactn) - Lib to manager the global state
+- [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start) - Lib to manager the url routes of the project
+- [Axios](https://github.com/axios/axios) - Lib to conect with rest apis
 
-Runs the app in the development mode.\
+### A description of folders division
+
+![folders](https://user-images.githubusercontent.com/53839013/168600287-642e3fb4-7f48-4c65-a868-6e75f5063e34.png)
+
+- `assets` => The folder that keeps the .png and .svg files that I got in the Figma layout
+
+- `components`=> The folder that keeps the ordinary components that I created to the project. In this project, there are three: Header, EditableTags (the created tags in "Add more" button) and BreweryCard. There are other components in project, in DesignSystem and Screens folders, that I will give more details below. 
+Each component is separeted in this files:
+  - ***index.tsx*** => who keeps the component to be exported to foreing folders and keeps all component logic that doesn't about design;
+  - ***view.tsx*** => who keeps JSX ("html" of React) structure of component and design logic (if necessary some design logic). This component is responsible to import the styled components from design system or styled components file;
+  - ***style.tsx*** => who keeps all components that demand some css config by `styled-components` lib;
+  - ***interfaces.ts*** => who keeps the interfaces to type the props of components from view.tsx or index.tsx  
+  - ***other stuff*** => according demand of component, is possible exists other files as specific custom hooks that will be use just by one component. 
+
+- `constants` => The folder that keeps static values of project. In this project the folder is keeping the base url of API (api.ts) and all strings that will be render as text of interface project (interfaceTexts.ts).
+
+- `designSystem` => This folder was created to separate all stuff coming from external design system lib that the project is using. This is extremely important to avoid some hard design bugs when some critical change happen in design system config, components, libs etc. Because if the design system stuff is scattered into the components, some change can demand search for each component that use the thing that changes, while with a designSystem folder, we fix the problem just in one place.     
+This folder have two folder who separete ordinary components (components folder) and icons (icons folder) of `MaterialUI`. A themeProvider.tsx file, to provide some commom stuff of designSystem project, as color pallete, font-family, etc. And a index.ts to export a object called designSystem, who keepps all components of the folder. 
+
+- `global` => The folder that keeps the global state of project. There is a division by folders in global state according the theme of the values. Like the entities folders that have the user entity folder and the brewery entity folder: this two folders keeps their respective global values. And in the end, all folders are reunited in initialGlobalState.ts file, to provide the global value to whole project.   
+
+- `hooks` => That keeps some custom hooks that could be commom in more than one component or even commom with another project.   
+
+- `routes` => The folder that keeps the routes config. This project there are two routes: "/" and "/login", the first is the route to brewery dashboard page, and the second, the route to login page. 
+
+- `screens` => The folder that keeps components that represents some whole screen of project. Is important this division between the screens and the components folder, because some screen logics provide props to a really deep tree of components, so to became easier to developer access this screens is a good way to keep good usability of project. Usually, one screen represent the whole component of a route, so as we have two routes in this project, we have two screens too.
+
+- `services` => The folder that keeps the connections with forein services. In this project, just the connection with the rest API to get breweries.
+
+- `utils` => The folder that keeps some util stuff that can be used in more than one case. In this project, just a regex function who validate text without number and special characters.
+
+
+## What works:
+
+- ### The "must have" requisitions
+- ### Some "nice to have" requisitons:
+  - Implement using Typescript
+  - Save user name in the global state
+  - If the user clicks in the tag add more, than a input should be displayed and when the user hits enter, or click in the check icon it became a regular tag
+  - Validate if the user entered only valid characters in the first screen
+  - Loading
+  - Showing the Git commit history [Pull Requests]https://github.com/pedro-severo/bees/pulls?q=is%3Apr+is%3Aclosed
+- ### Some other stuff not requested
+  - A very simple logic of page protection and automatic: when user login, the user name and a mocked token is saved in localstorage. If this token is in local storage when user go to dasboard screen, he/she keeps in page, if there isn't token he/she is forwarded to login page. And when user go to login page and there are token and user name in local storage, automaticaly he/she is forwarded to dashboard page. 
+  - The user can delete the tags created using a delete button in this tags.   
+
+## What doesn't work:
+
+- Some responsivity bugs => I was going well, but with "add more tags" feat I had some problems with card height 
+- Write unit tests => I worked with tests in backend only, with unit test and integration test of endpoints. But in front, never. I started see how do, but I was with a dificult and without time (it was sunday nigth) to understand how to mock state, UI situations and components.  
+- Write component/UI tests => Same description above.
+- Error handling => I left this for the end, after the tests, but I didn't have time to do it
+- Empty state => I left this for the end, after the tests, but I didn't have time to do it
+
+
+## Getting Started
+
+After clone of repository, run:
+
+### `yarn install` or `npm install`
+
+So, open react project, running:
+
+### `yarn start` or `npm run start`
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
