@@ -2,6 +2,7 @@ import React from "react";
 import { IBreweryCardView } from "./interfaces";
 import { CardWrraper } from "./style";
 import { designSystem } from "../../designSystem";
+import { EditableTags } from "../EditableTags";
 
 const {
   Stack,
@@ -51,16 +52,14 @@ export const BreweryCardView: React.FC<IBreweryCardView> = ({
               label={brewery.postal_code}
               color="primary"
             />
-          </Stack>
-          <br />
-          <Stack direction="row" spacing={4}>
             <Chip
               icon={<LocalPhoneIcon />}
               label={brewery.phone}
               color="primary"
             />
-            <Chip icon={<AddCircleIcon />} label="Add more" color="primary" />
           </Stack>
+          <br />
+          <EditableTags />
         </CardContent>
       </Card>
     </CardWrraper>
