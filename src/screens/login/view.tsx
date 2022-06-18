@@ -28,6 +28,7 @@ export const LoginView: React.FC<ILoginView> = ({
         <StyledText>{interfaceTexts.screens.login.secondSubtitle}</StyledText>
         <Form onSubmit={handleSubmission}>
           <FullNameInput
+            id={interfaceTexts.screens.login.fullNameInputLabel}
             label={interfaceTexts.screens.login.fullNameInputLabel}
             variant="outlined"
             name="fullName"

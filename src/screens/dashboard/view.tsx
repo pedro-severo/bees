@@ -18,7 +18,7 @@ export const DashboardView: React.FC<IDashboardView> = ({
             <Loading size={80} />
           </LoadingWrapper>
         ) : (
-          breweries.map((brewery) => {
+          breweries?.map((brewery) => {
             return <BreweryCard brewery={brewery} />;
           })
         )}
